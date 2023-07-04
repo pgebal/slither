@@ -1,0 +1,197 @@
+'/home/pawel/Projects/solidity/build/solc/solc --version' running
+'/home/pawel/Projects/solidity/build/solc/solc inheritances_graph.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/home/pawel/Projects/slither/examples/printers' running
+Compilation warnings/errors on inheritances_graph.sol:
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> inheritances_graph.sol
+
+[91mError: Overriding function is missing "override" specifier.[0m
+  --> inheritances_graph.sol:20:5:
+   |
+20 |     function f() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Overridden function is here:
+ --> inheritances_graph.sol:4:5:
+  |
+4 |     function f() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+[91mError: Trying to override non-virtual function. Did you forget to add "virtual"?[0m
+ --> inheritances_graph.sol:4:5:
+  |
+4 |     function f() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Overriding function is here:
+  --> inheritances_graph.sol:20:5:
+   |
+20 |     function f() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+[91mError: Derived contract must override function "g". Two or more base classes define function with same name and parameter types.[0m
+  --> inheritances_graph.sol:19:1:
+   |
+19 | contract C is A, B {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+Note: Definition in "A": 
+ --> inheritances_graph.sol:8:5:
+  |
+8 |     function g() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Definition in "B": 
+  --> inheritances_graph.sol:14:5:
+   |
+14 |     function g() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Traceback (most recent call last):
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 575, in _run_solc
+    ret: Dict = json.loads(stdout)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pawel/.local/lib/python3.10/site-packages/slither/__main__.py", line 837, in main_impl
+    ) = process_all(filename, args, detector_classes, printer_classes)
+  File "/home/pawel/.local/lib/python3.10/site-packages/slither/__main__.py", line 90, in process_all
+    compilations = compile_all(target, **vars(args))
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py", line 646, in compile_all
+    compilations.append(CryticCompile(target, **kwargs))
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py", line 131, in __init__
+    self._compile(**kwargs)
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py", line 553, in _compile
+    self._platform.compile(self, **kwargs)
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 149, in compile
+    targets_json = _get_targets_json(compilation_unit, self._target, **kwargs)
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 278, in _get_targets_json
+    return _run_solc(
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 579, in _run_solc
+    raise InvalidCompilation(f"Invalid solc compilation {stderr}")
+crytic_compile.platform.exceptions.InvalidCompilation: Invalid solc compilation Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> inheritances_graph.sol
+
+Error: Overriding function is missing "override" specifier.
+  --> inheritances_graph.sol:20:5:
+   |
+20 |     function f() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Overridden function is here:
+ --> inheritances_graph.sol:4:5:
+  |
+4 |     function f() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: Trying to override non-virtual function. Did you forget to add "virtual"?
+ --> inheritances_graph.sol:4:5:
+  |
+4 |     function f() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Overriding function is here:
+  --> inheritances_graph.sol:20:5:
+   |
+20 |     function f() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: Derived contract must override function "g". Two or more base classes define function with same name and parameter types.
+  --> inheritances_graph.sol:19:1:
+   |
+19 | contract C is A, B {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+Note: Definition in "A": 
+ --> inheritances_graph.sol:8:5:
+  |
+8 |     function g() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Definition in "B": 
+  --> inheritances_graph.sol:14:5:
+   |
+14 |     function g() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+ERROR:root:Error in inheritances_graph.sol
+ERROR:root:Traceback (most recent call last):
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 575, in _run_solc
+    ret: Dict = json.loads(stdout)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pawel/.local/lib/python3.10/site-packages/slither/__main__.py", line 837, in main_impl
+    ) = process_all(filename, args, detector_classes, printer_classes)
+  File "/home/pawel/.local/lib/python3.10/site-packages/slither/__main__.py", line 90, in process_all
+    compilations = compile_all(target, **vars(args))
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py", line 646, in compile_all
+    compilations.append(CryticCompile(target, **kwargs))
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py", line 131, in __init__
+    self._compile(**kwargs)
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/crytic_compile.py", line 553, in _compile
+    self._platform.compile(self, **kwargs)
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 149, in compile
+    targets_json = _get_targets_json(compilation_unit, self._target, **kwargs)
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 278, in _get_targets_json
+    return _run_solc(
+  File "/home/pawel/.local/lib/python3.10/site-packages/crytic_compile/platform/solc.py", line 579, in _run_solc
+    raise InvalidCompilation(f"Invalid solc compilation {stderr}")
+crytic_compile.platform.exceptions.InvalidCompilation: Invalid solc compilation Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> inheritances_graph.sol
+
+Error: Overriding function is missing "override" specifier.
+  --> inheritances_graph.sol:20:5:
+   |
+20 |     function f() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Overridden function is here:
+ --> inheritances_graph.sol:4:5:
+  |
+4 |     function f() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: Trying to override non-virtual function. Did you forget to add "virtual"?
+ --> inheritances_graph.sol:4:5:
+  |
+4 |     function f() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Overriding function is here:
+  --> inheritances_graph.sol:20:5:
+   |
+20 |     function f() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: Derived contract must override function "g". Two or more base classes define function with same name and parameter types.
+  --> inheritances_graph.sol:19:1:
+   |
+19 | contract C is A, B {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+Note: Definition in "A": 
+ --> inheritances_graph.sol:8:5:
+  |
+8 |     function g() public pure returns (uint) {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+Note: Definition in "B": 
+  --> inheritances_graph.sol:14:5:
+   |
+14 |     function g() public pure returns (uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+

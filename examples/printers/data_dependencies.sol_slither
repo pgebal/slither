@@ -1,0 +1,24 @@
+'/home/pawel/Projects/solidity/build/solc/solc --version' running
+'/home/pawel/Projects/solidity/build/solc/solc data_dependencies.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/home/pawel/Projects/slither/examples/printers' running
+Compilation warnings/errors on data_dependencies.sol:
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> data_dependencies.sol
+
+
+INFO:Detectors:[92m
+Pragma version^0.8.19 (data_dependencies.sol#1) necessitates a version too recent to be trusted. Consider deploying with 0.8.18.
+solc-0.8.21 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity[0m
+INFO:Detectors:[92m
+Parameter MyContract.setA(uint256,uint256).input_a (data_dependencies.sol#7) is not in mixedCase
+Parameter MyContract.setA(uint256,uint256).input_b (data_dependencies.sol#7) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+MyContract.c (data_dependencies.sol#5) is never used in MyContract (data_dependencies.sol#2-16)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-state-variable[0m
+INFO:Detectors:[92m
+MyContract.c (data_dependencies.sol#5) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Slither:data_dependencies.sol analyzed (1 contracts with 85 detectors), 6 result(s) found

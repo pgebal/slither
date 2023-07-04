@@ -1,0 +1,3 @@
+/Projects/solidity/build/solc/solc --model-checker-targets all --model-checker-engine all --model-checker-bmc-loop-iterations 20 --model-checker-solvers z3 --model-checker-show-unsupported authorization.sol 2> slither_example_authorization_smtchecker
+slither --solc ~/Projects/solidity/build/solc/solc b.sol 2> slither_example_flat_output
+

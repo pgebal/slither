@@ -1,3 +1,4 @@
+pragma solidity ^0.8.19;
 contract MyContract{
     uint a = 0;
     uint b = 0;

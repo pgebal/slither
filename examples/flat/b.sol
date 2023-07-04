@@ -1,6 +1,6 @@
 import "./a.sol";
 
-pragma solidity 0.8.19;
+pragma solidity ^0.8.19;
 
 enum B {
   a,

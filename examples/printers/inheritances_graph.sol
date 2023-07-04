@@ -1,3 +1,5 @@
+pragma solidity ^0.8.19;
+
 contract A {
     function f() public pure returns (uint) {
         return 0;

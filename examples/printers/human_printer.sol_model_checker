@@ -1,0 +1,95 @@
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> human_printer.sol
+
+Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+  --> human_printer.sol:12:3:
+   |
+12 |   constructor() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: CHC: Overflow (resulting value larger than 2**256 - 1) happens here.
+Counterexample:
+mintingFinished = false, owner = 0x0, totalSupply_ = 115792089237316195423570985008687907853269984665640564039457584007913129637498
+_to = 0x0
+_amount = 2438
+ = false
+
+Transaction trace:
+SimpleVulnerableToken.constructor(){ msg.sender: 0x0 }
+State: mintingFinished = false, owner = 0x0, totalSupply_ = 0
+SimpleVulnerableToken.mint(0x08c0, 115792089237316195423570985008687907853269984665640564039457584007913129637498)
+State: mintingFinished = false, owner = 0x0, totalSupply_ = 115792089237316195423570985008687907853269984665640564039457584007913129637498
+SimpleVulnerableToken.mint(0x0, 2438)
+   --> human_printer.sol:151:20:
+    |
+151 |     totalSupply_ = totalSupply_ + (_amount);
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning: CHC: 3 verification condition(s) could not be proved. Enable the model checker option "show unproved" to see all of them. Consider choosing a specific contract to be verified in order to reduce the solving problems. Consider increasing the timeout per query.
+
+Info: CHC: 3 verification condition(s) proved safe! Enable the model checker option "show proved safe" to see all of them.
+
+Warning: BMC: Overflow (resulting value larger than 2**256 - 1) happens here.
+  --> human_printer.sol:61:21:
+   |
+61 |     balances[_to] = balances[_to] + (_value);
+   |                     ^^^^^^^^^^^^^^^^^^^^^^^^
+Note: Counterexample:
+   = false
+  <result> = 2**256
+  _to = 31112
+  _value = 0xFFFFffffFFFFffffFFFFffffFFFFffffFFFFffffFFFFffffFFFFffffFFFFb4bf
+  balances[_to] = 19265
+  balances[msg.sender] = 0xFFFFffffFFFFffffFFFFffffFFFFffffFFFFffffFFFFffffFFFFffffFFFFb4bf
+  owner = 0
+  totalSupply_ = 0
+
+Note: Callstack:
+Note: 
+Note that array aliasing is not supported, therefore all mapping information is erased after a mapping local variable/parameter is assigned.
+You can re-introduce information using require().
+
+Warning: BMC: Overflow (resulting value larger than 2**256 - 1) happens here.
+  --> human_printer.sol:96:21:
+   |
+96 |     balances[_to] = balances[_to] + (_value);
+   |                     ^^^^^^^^^^^^^^^^^^^^^^^^
+Note: Counterexample:
+   = false
+  <result> = 2**256
+  _from = 1770
+  _to = 1769
+  _value = 1
+  allowed[_from][msg.sender] = 13825
+  balances[_from] = 9245
+  balances[_to] = 2**256 - 1
+  owner = 0
+  totalSupply_ = 0
+
+Note: Callstack:
+Note: 
+Note that array aliasing is not supported, therefore all mapping information is erased after a mapping local variable/parameter is assigned.
+You can re-introduce information using require().
+
+Warning: BMC: Overflow (resulting value larger than 2**256 - 1) happens here.
+   --> human_printer.sol:152:21:
+    |
+152 |     balances[_to] = balances[_to] + (_amount);
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+Note: Counterexample:
+   = false
+  <result> = 2**256
+  _amount = 1
+  _to = 1183
+  balances[_to] = 2**256 - 1
+  mintingFinished = false
+  owner = 0
+  totalSupply_ = 1
+
+Note: Callstack:
+Note: 
+Note that array aliasing is not supported, therefore all mapping information is erased after a mapping local variable/parameter is assigned.
+You can re-introduce information using require().
+

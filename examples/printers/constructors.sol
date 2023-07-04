@@ -1,4 +1,4 @@
-pragma solidity >=0.4.22 <0.6.0;
+pragma solidity ^0.8.19;
 contract test{
     uint a;
     constructor()public{

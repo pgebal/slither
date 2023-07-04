@@ -1,0 +1,6 @@
+
+
+printers:
+file | model_checker | slither
+authorization.sol | overflow reported - correct| none
+constructors.sol | 

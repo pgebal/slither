@@ -1,0 +1,37 @@
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> b.sol
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> a.sol
+
+Warning: This declaration shadows an existing declaration.
+  --> b.sol:13:9:
+   |
+13 |         B b = B.a;
+   |         ^^^
+Note: The shadowed declaration is here:
+  --> b.sol:12:5:
+   |
+12 |     function b() public returns(uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: Unused local variable.
+  --> b.sol:13:9:
+   |
+13 |         B b = B.a;
+   |         ^^^
+
+Warning: Function state mutability can be restricted to pure
+  --> b.sol:12:5:
+   |
+12 |     function b() public returns(uint) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: Contract deployment is only supported in the trusted mode for external calls with the CHC engine.
+  --> b.sol:11:17:
+   |
+11 |     Example e = new Example();
+   |                 ^^^^^^^^^^^^^
+

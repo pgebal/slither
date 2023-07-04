@@ -1,0 +1,35 @@
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> call_graph.sol
+
+Error: No visibility specified. Did you intend to add "public"?
+ --> call_graph.sol:3:5:
+  |
+3 |     function library_func() {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: No visibility specified. Did you intend to add "public"?
+  --> call_graph.sol:10:5:
+   |
+10 |     function my_func_a() {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: No visibility specified. Did you intend to add "public"?
+  --> call_graph.sol:23:5:
+   |
+23 |     function my_func_b() {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: No visibility specified. Did you intend to add "public"?
+  --> call_graph.sol:28:5:
+   |
+28 |     function my_func_a() {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Error: No visibility specified. Did you intend to add "public"?
+  --> call_graph.sol:32:5:
+   |
+32 |     function my_second_func_b(){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
